@@ -1,10 +1,4 @@
-from abc import abstractmethod
-import numpy as np
-
-from Position import Position
-from Velocity import Velocity
-from types import Direction, Rotation
-
+from .GameObject import GameObject, Position, Direction, Velocity, Rotation
 
 
 class SpaceShip(GameObject):
@@ -17,12 +11,3 @@ class SpaceShip(GameObject):
         self.position.y = self.position.y + self.velocity.y
 
         self.direction = self.direction + self.rotation
-
-
-class Torpedo(GameObject):
-    pass
-
-
-class Meteorite(GameObject):
-    pass
-
