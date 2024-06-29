@@ -1,8 +1,19 @@
+from abc import ABC
 from typing import List, NewType
 
+import numpy as np
 
-class Coordinates:
+
+class Coordinates(ABC):
     coordinates: List[int]
+
+    @property
+    def array(self) -> np.array:
+        return np.array(self.coordinates)
+
+    @array.setter
+    def array(self, new_array: np.array):
+        self.coordinates = new_array.tolist()
 
     @property
     def x(self) -> int:
