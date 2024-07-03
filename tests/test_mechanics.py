@@ -7,14 +7,6 @@ from GameServer.mechanics.Move import IMovable, Move, MovableAdapter
 from GameServer.mechanics.Rotate import IRotable, Rotate, RotableAdapter
 from GameServer.basic.stypes import Position, Velocity, Direction, Rotating
 
-
-# Complexity Level #2:
-# + 5. Реализован тест: Для объекта, находящегося в точке (12, 5) и движущегося со скоростью (-7, 3) движение меняет положение объекта на (5, 8)
-# + 6. Реализован тест: Попытка сдвинуть объект, у которого невозможно прочитать положение объекта в пространстве,, приводит к ошибке
-# + 7. Реализован тест: Попытка сдвинуть объект, у которого невозможно прочитать значение мгновенной скорости, приводит к ошибке
-# + 8. Реализован тест: Попытка сдвинуть объект, у которого невозможно изменить положение в пространстве, приводит к ошибке
-# + 9. Все тесты успешно выполняются
-
 class TestMove(unittest.TestCase):
 
     def test_move(self):
@@ -75,13 +67,6 @@ class TestMove(unittest.TestCase):
         mock_movable.get_position.assert_called_once()
         mock_movable.get_velocity.assert_called_once()
 
-
-# Complexity Level #3:
-# + 1. Реализованы тесты для поворота корабля вокруг собственной оси.
-# 2. Настроен расчет покрытия кода тестами.
-# 3. Настроен CI, который умеет собирать проект и прогонять тесты, вычислять покрытие кода тестами.
-# 4. Покрытие кода тестами 100%.
-# 5. Пайплайн “зеленый”
 
 class TestRotate(unittest.TestCase):
 
@@ -189,7 +174,6 @@ class TestRotableAdapter(unittest.TestCase):
         new_direction = Direction(60)
         self.rotate_adapter.set_direction(new_direction)
         self.mock_gobject.__setitem__.assert_called_once_with('direction', new_direction)
-
 
 
 if __name__ == '__main__':
