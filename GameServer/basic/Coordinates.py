@@ -35,3 +35,9 @@ class Coordinates(ABC):
     @y.setter
     def y(self, new_y: int):
         self.coordinates[1] = new_y
+
+    def __repr__(self):
+        return self.coordinates.__repr__()
+
+    def __str__(self):
+        return self.coordinates.__str__()

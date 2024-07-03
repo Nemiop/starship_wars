@@ -27,7 +27,7 @@ class RotableAdapter(IRotable):
         return self.g["direction"]
 
     def get_rotating(self) -> Rotating:
-        return self.g["Rotating"]
+        return self.g["rotating"]
 
     def set_direction(self, new_direction: Direction) -> None:
         self.g["direction"] = new_direction
