@@ -1,4 +1,4 @@
-from .GameObject import GameObject
+from .GObject import GameObject
 
 
 class Torpedo(GameObject):

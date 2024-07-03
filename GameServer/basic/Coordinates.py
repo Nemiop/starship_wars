@@ -5,11 +5,16 @@ import numpy as np
 
 
 class Coordinates(ABC):
-    coordinates: List[int]
-
+    def __init__(self, coords: List[int]):
+        self.coordinates = coords
     @property
     def array(self) -> np.array:
         return np.array(self.coordinates)
+
+    def __eq__(self, other):
+        if isinstance(other, Coordinates):
+            return np.array_equal(self.array, other.array)
+        return False
 
     @array.setter
     def array(self, new_array: np.array):
